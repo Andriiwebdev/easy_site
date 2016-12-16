@@ -11,7 +11,7 @@ h2 {
 /* Scroll /////////////////////////////////////////////*/
 body .topBtn{
  color: #fff;
- background: #FF4500;
+ background: #014656;
  text-decoration: none !important;
  width: 70px;
  height: 70px;
@@ -22,7 +22,14 @@ body .topBtn{
  right: 12px;
  bottom: 15px;
  border-radius: 50%;
- opacity: 0.4;
+ opacity: 0.6;
+ z-index: 999;
+} 
+body .topBtn > span {
+	position: absolute;
+    top: 17px;
+    left: 17px;
+    font-size: 35px;
 }
 body .topBtn:hover{
 	opacity: 1;
@@ -79,7 +86,6 @@ header .container .row > h1 > .title {
 	width: 120px;
 	height: 60px;
 	padding: 5px;
-
 }
 .nav > li  .btn-primary {
 	width: 100%;
@@ -94,17 +100,17 @@ header .container .row > h1 > .title {
 	font-size: 18px;
 	background: none;
 	box-shadow: none;
-	transition-duration: 0.2s;
+	transition-duration: 0.1s;
 	
 }
 .nav > li  .btn-primary:hover {
-	border-bottom: 4px solid orange;
+	border-bottom: 5px solid orange;
 	background: rgba(0,0,0,0.2);
 }
 .nav > li  .btn-primary:focus {
 	background-image: none;
 	color: white;
-	border-bottom: 4px solid orange;
+	border-bottom: 5px solid orange;
 	background: rgba(0,0,0,0.2);
 }
 #bs-example-navbar-collapse-1 > ul > li > a {
@@ -117,16 +123,16 @@ header .container .row > h1 > .title {
 	text-align: center;
 	font-size: 18px;
 	background: none;
-	transition-duration: 0.2s;
+	transition-duration: 0.1s;
 }
 #bs-example-navbar-collapse-1 > ul > li > a:hover {
-	border-bottom: 4px solid orange;
+	border-bottom: 5px solid orange;
 	background: rgba(0,0,0,0.2);
 }
 #bs-example-navbar-collapse-1 > ul > li > a:focus {
 	background-image: none;
 	color: white;
-	border-bottom: 4px solid orange;
+	border-bottom: 5px solid orange;
 	background: rgba(0,0,0,0.2);
 }
 .navbar-left .form-group > input{
@@ -218,144 +224,91 @@ main .container {
 	padding-top: 20px;
 }
 /* start slider /////////////////////////////////////////*/
-.animate .slides {
-    position:relative;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    overflow:hidden;
-    background-image: url('image/pixel-patern.png');
-    background-repeat: repeat;
+.row .slides .rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
-.animate .slides ul {
-    position:relative;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    list-style:none;   
+.row .slides .rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
 }
-/* Кадри анімації #anim_slides */
-@-webkit-keyframes anim_slides {
-    0% {opacity:0;}
-    2% {opacity: 0.5;}
-    4% {opacity: 0.7;}
-    6% {opacity:0.7;}
-    24% {opacity:0.7;}
-    30% {opacity:0;}
-    100% {opacity:0;}
+.row .slides .rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
 }
-@-moz-keyframes anim_slides {
-    0% {opacity:0;}
-    2% {opacity: 0.5;}
-    4% {opacity: 0.7;}
-    6% {opacity:0.7;}
-    24% {opacity:0.7;}
-    30% {opacity:0;}
-    100% {opacity:0;}
+.row .slides .rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
 }
-.animate .slides ul li > a {
-	display: inline-block;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
+  .centered-btns_nav {
+  z-index: 3;
+  position: absolute;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  top: 50%;
+  left: 0;
+  opacity: 0.7;
+  text-indent: -9999px;
+  overflow: hidden;
+  text-decoration: none;
+  height: 61px;
+  width: 38px;
+  background: transparent url("image/themes.gif") no-repeat left top;
+  margin-top: -45px;
 }
-.animate .slides ul li {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-    opacity:0;
-    top:0;
-
-    /* анімація css3 */
-    -webkit-animation-name: anim_slides;
-    -webkit-animation-duration: 24.0s;
-    -webkit-animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-direction: normal;
-    -webkit-animation-delay: 0;
-    -webkit-animation-play-state: running;
-    -webkit-animation-fill-mode: forwards;
-
-
-    -moz-animation-name: anim_slides;
-    -moz-animation-duration: 24.0s;
-    -moz-animation-timing-function: linear;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-direction: normal;
-    -moz-animation-delay: 0;
-    -moz-animation-play-state: running;
-    -moz-animation-fill-mode: forwards;
+.centered-btns_nav:active {
+  opacity: 1.0;
 }
-
-/* Затримка css3 */
-.animate .slides ul > li:nth-child(2), .slides ul > li:nth-child(2) div {
-    -webkit-animation-delay: 8s;
-    -moz-animation-delay: 8s;
+.centered-btns_nav.next {
+  left: auto;
+  background-position: right top;
+  right: 0;
+  }
+.centered-btns_nav:focus{
+  outline: none;
 }
-.animate .slides ul > li:nth-child(3), .slides ul > li:nth-child(3) div {
-    -webkit-animation-delay: 16s;
-    -moz-animation-delay: 16s;
+.centered-btns_tabs{
+  margin-top: 10px;
+  text-align: center;
 }
-.animate .slides > ul > li > img {
-	width: 100%;
-	min-height: 450px;
-    display:block;
-    filter: contrast(130%);
-    -webkit-filter: contrast(130%);
-    -moz-filter: contrast(130%);
+.centered-btns_tabs li{
+  display: inline;
+  float: none;
+  _float: left;
+  *float: left;
+  margin-right: 5px;
 }
-
-@-webkit-keyframes anim_titles {
-    0% {opacity:0;}
-    5% {opacity:0.8;}
-    20% {opacity:0.8;}
-    25% {opacity:0;}
-    100% {opacity:0;}
+.centered-btns_tabs a {
+  text-indent: -9999px;
+  overflow: hidden;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  background: #ccc;
+  background: rgba(0,0,0, .2);
+  display: inline-block;
+  _display: block;
+  *display: block;
+  -webkit-box-shadow: inset 0 0 2px 0 rgba(0,0,0,.3);
+  -moz-box-shadow: inset 0 0 2px 0 rgba(0,0,0,.3);
+  box-shadow: inset 0 0 2px 0 rgba(0,0,0,.3);
+  width: 9px;
+  height: 9px;
 }
-@-moz-keyframes anim_titles {
-    0% {opacity:0;}
-    5% {opacity:0.8;}
-    20% {opacity:0.8;}
-    25% {opacity:0;}
-    100% {opacity:0;}
-}
-.animate .slides ul li div {
-    background-color:#000000;
-    box-shadow:0 0 5px #FFFFFF inset;
-    color:#FFFFFF;
-    font-size:25px;
-    text-align: center;
-    left:10%;
-    margin:0 auto;
-    padding:20px;
-    position:absolute;
-    top:50%;
-    width:450px;
-    height: 200px;
-    -webkit-transform: skew(-20deg);
-	-moz-transform: skew(-20deg);
-	-o-transform: skew(-20deg);
-
-    -webkit-animation-name: anim_titles;
-    -webkit-animation-duration: 24.0s;
-    -webkit-animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-direction: normal;
-    -webkit-animation-delay: 0;
-    -webkit-animation-play-state: running;
-    -webkit-animation-fill-mode: forwards;
-
-    -moz-animation-name: anim_titles;
-    -moz-animation-duration: 24.0s;
-    -moz-animation-timing-function: linear;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-direction: normal;
-    -moz-animation-delay: 0;
-    -moz-animation-play-state: running;
-    -moz-animation-fill-mode: forwards;
+.centered-btns_here a {
+  background: #222;
+  background: rgba(0,0,0, .8);
 }
 /* end slider ////////////////////////////////////////////*/
 .container .row .title-text-content {
@@ -429,7 +382,8 @@ main .container {
 .page_1 .m-content .collage {
 	padding: 1px;
 	height: 300px;
-	overflow: hidden;	
+	overflow: hidden;
+	min-width: 300px;	
 }
 .page_1 .m-content .collage > a {
 	display: inline-block;
@@ -454,7 +408,7 @@ main .container {
     text-decoration: none;
     color: #ffffff;
     background: rgba(0,0,0, 0.6);
-    -webkit-transition: all 0.8s ease-out;
+    -webkit-transition: all 0.4s ease-out;
 }
 .page_1 .m-content .collage > a:hover .main_dcr {
 	position: absolute;
@@ -492,6 +446,7 @@ main .container {
 	width: 100%;
 	height: 100%;
 	color: black;
+	border-bottom: 1px solid silver;
 }
 .page_2 .container .media:hover {
 	border: 1px solid #1c222a;

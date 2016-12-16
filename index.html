@@ -1,4 +1,4 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -108,24 +108,19 @@
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container -->
 	</nav>
-		<div class="clearfix"></div>
 	<main>
 		<div class="container">
 			<!--Start slider-->   
-				<div class="row animate" style="position: relative; width: 100%; height: 450px; margin: 0 auto; overflow: hidden;">
+				<div class="row animate" style="position: relative; width: 100%; margin: 0 auto; overflow: hidden;">
 					<div class="slides">
-					    <ul>
-					        <li><img src="image/dsc_4243.jpg" alt="image01"/>
-					            <div>Акція!!!<br><span style="display: inline-block; text-align: justify; font-size: 18px;">При купівлі двох одиниць товару, отримуй карту пам'яті microSD 64Гб в подарунок.</span></div>
-					        </li>
-					        <li><img src="image/maxresdefault(2).jpg" alt="image02" />
-					            <div>Знижки!!!<br><span style="display: inline-block; text-align: justify; font-size: 18px; letter-spacing: 3px;">Знижки на весь модельний ряд Smart телевізорів від Samsung.</span></div>
-					        </li>
-					        <li><img src="image/EOS-5DS-Black-Beauty-09.jpg" alt="image03" />
-					            <div>Подарунок!!!<br><span style="display: inline-block; text-align: justify; font-size: 18px;">Купуй професійний фотоапарат Canon EOS 5D + в подарунок сумка Canon EOS.</span></div>
-					        </li>
-					    </ul>
-					</div>
+						<div class="rslides_container">
+					      <ul class="rslides" id="slider1">
+					        <li><img src="image/apple_macbook_laptop_shadow_26184_1920x1080.jpg" alt=""></li>
+					        <li><img src="image/lg_v10_smartfon_dizajn_104913_1920x1080.jpg" alt=""></li>
+					        <li><img src="image/ws_Canon_EOS_6D_Poster_1920x1080 (1).jpg" alt=""></li>
+					      </ul>
+					    </div>
+					</div> 
 				</div>
 			<!--End slider-->
 			<div class="clearfix"></div>
@@ -303,14 +298,17 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="component.js"></script>
 	<script src="script.js"></script>
-	<script>
-    	$( function() {
-    	$( "#accordion" ).accordion({
-        collapsible: true
-        });
-    });
-  </script>
-  <script type="text/javascript">
+	<script type="text/javascript">
+		$("#slider1").responsiveSlides({
+	        auto: true,
+	        pager: true,
+	        nav: true,
+	        speed: 500,
+	        maxwidth: "",
+	        namespace: "centered-btns"
+	      });
+	</script>
+    <script type="text/javascript">
 	$('.dropdown-toggle').click(function()
 	{	
 		$('#dropdown-menu').slideToggle('slow');
