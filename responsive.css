@@ -51,9 +51,6 @@
 		width: 100%;
 		height: auto;
 	}
-	.b-preview__content {
-		height: 80% !important;
-	}
 	.b-preview__image {
 		max-height: 75%;
 		max-width: 85%;
@@ -67,17 +64,34 @@
 	.dropdown > ul > li > a {
 		text-align: left;
 	}
-	#bs-example-navbar-collapse-1 {
-		height: 355px;
-	}
 	#bs-example-navbar-collapse-1 > ul > li {
 		display: block;
 		float: none;
 	}
 	#bs-example-navbar-collapse-1 .navbar-form {
 		position: absolute;
-		bottom: 0;
-		left: 26px;
+		top: 0;
+		left: 0;
+		margin: 0;
+		-webkit-box-shadow: none;
+		        box-shadow: none;
+	}
+	#bs-example-navbar-collapse-1 .navbar-form .form-group {
+		width: 155px;
+	}
+	#bs-example-navbar-collapse-1 .navbar-form .form-group .form-control {
+		width: 150px;
+		display: inline-block;
+	}
+	#bs-example-navbar-collapse-1 .btn-default {
+		position: absolute;
+		background: none;
+		left: 125px;
+		top: 10px;
+		border: none;
+		-webkit-box-shadow: none;
+		        box-shadow: none;
+		color: silver;
 	}
 	.dropdown-menu {
 		position: absolute;
@@ -100,10 +114,10 @@
 }
 @media (min-width: 992px) and (max-width: 1200px){
 	.page_1 .m-content .collage{
-		height: 265px;
+		height: 221px;
 	}
 	.page_1 .m-content .collage > a .main_dcr {
-		top: 222px;
+		top: 178px;
 	}
 	.b-picture{
 		height: 75px;
@@ -121,9 +135,11 @@
 		font-size: 19px;
 	}
 	.row .thumbnail  > .image {
-	overflow: hidden;
-	width: 100%;
-	height: 400px;
+		overflow: hidden;
+		width: auto;
+	    height: auto;
+	    max-width: 100%;
+	    max-height: 100%;
 	}
 	.page_2 .container .media{
 		width: 100%;
@@ -133,9 +149,6 @@
 	.b-picture{	
 		width: 25%;
 		height: 115px;	
-	}
-	.b-preview__content {
-		height: 60% !important;
 	}
 	.page_1 .m-content .collage {
 		height: 200px;
@@ -158,9 +171,7 @@
 		width: 25%;
 		height: 80px;	
 	}
-	.b-preview__content {
-		height: 45% !important;
-	}
+	
 	.page_1 .m-content .collage {
 		height: 170px;
 	}
